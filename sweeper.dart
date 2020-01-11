@@ -8,7 +8,6 @@ main(){
 	bool gameover = false;
 	while (gameover==false)
 	{
-		print ("while "+(gameover==false).toString());
 
 		stdout.writeln("Cell x:");
 		int x = int.parse(stdin.readLineSync())-1;
