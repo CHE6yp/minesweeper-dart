@@ -8,6 +8,7 @@ main(){
 	bool gameover = false;
 	while (gameover==false)
 	{
+		field.DrawField();
 
 		stdout.writeln("Cell x:");
 		int x = int.parse(stdin.readLineSync())-1;
@@ -25,7 +26,6 @@ main(){
 
 				if (gameover==false){
 					field = new Field();
-				} else {
 				}
 			}
 		}
