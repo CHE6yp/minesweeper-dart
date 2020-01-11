@@ -6,9 +6,9 @@ main(){
 	var field = new Field();
 
 	bool gameover = false;
-	while (!gameover)
+	while (gameover==false)
 	{
-		field.DrawField();
+		print ("while "+(gameover==false).toString());
 
 		stdout.writeln("Cell x:");
 		int x = int.parse(stdin.readLineSync())-1;
@@ -23,7 +23,11 @@ main(){
 		else{
 			if (field.OpenCell(x,y)){
 				gameover = GameOver();
-				field = new Field();
+
+				if (gameover==false){
+					field = new Field();
+				} else {
+				}
 			}
 		}
 	}
@@ -33,7 +37,8 @@ main(){
 bool GameOver(){
 	stdout.writeln("Play again? Type y!");
 	String again = stdin.readLineSync();
-	return (again == "y" || again == "Y")? false:true;
+
+	return (again != "y" && again != "Y");
 }
 
 class Field{
